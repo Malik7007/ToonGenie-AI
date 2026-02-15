@@ -50,6 +50,34 @@ Switch between the world's most powerful AI brains via a single HUD:
 
 ---
 
+## 🎬 The Production Workflow: Step-by-Step
+
+### Step 1: Creative Spark
+Enter a descriptive prompt like *"A clumsy robot trying to bake a chocolate cake in a futuristic kitchen."* Select your target age group (e.g., Kids), your animation style (e.g., 3D Render), and the story tone (e.g., Whimsical). Click **Initiate Studio**.
+
+### Step 2: Script Directing
+The AI generates a 3-5 scene script. In this phase, you are the **Lead Writer**:
+- Edit scene descriptions for better visual context.
+- Adjust dialogue to match your character's voice.
+- Set the **Camera Angles** for cinematic impact.
+
+### Step 3: DNA Synthesis
+The AI designs your characters. This is where you lock in **Visual Consistency**:
+- Review the generated character sheets.
+- Use the **Re-roll** button if a character doesn't look quite right.
+- Once you approve, their "Visual DNA" is locked, ensuring they look identical in every scene.
+
+### Step 4: Full Production & Screening
+Initiate the full render. The system will:
+1. Compose custom background music based on the story's mood.
+2. Paint all scene keyframes using locked DNA.
+3. Synthesize voiceovers with emotional depth.
+4. Render motion video for every scene.
+
+Once complete, enter **Theater Mode** to screen your masterpiece with cinematic overlays and subtitles.
+
+---
+
 ## 🛠️ Performance Tech Stack
 
 - **Frontend:** React 19 (Strict Mode), TypeScript 5, Vite 6
