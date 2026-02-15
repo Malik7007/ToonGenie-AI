@@ -42,7 +42,7 @@ export enum Language {
 }
 
 export enum AIProvider {
-  GEMINI = 'GEMINI',
+  TOONGENIE_CORE = 'TOONGENIE_CORE',
   OPENROUTER = 'OPENROUTER',
   GROQ = 'GROQ',
   OLLAMA = 'OLLAMA',

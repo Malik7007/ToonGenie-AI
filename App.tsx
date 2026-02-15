@@ -67,18 +67,18 @@ export default function App() {
 
   // API State
   const [apiKeys, setApiKeys] = useState({
-    gemini: localStorage.getItem('toa_gemini_key') || "",
-    openrouter: localStorage.getItem('toa_or_key') || "",
-    groq: localStorage.getItem('toa_groq_key') || "",
-    openai: localStorage.getItem('toa_openai_key') || "",
-    ollamaBase: localStorage.getItem('toa_ollama_base') || "http://localhost:11434"
+    gemini: localStorage.getItem('toongenie_core_key') || "",
+    openrouter: localStorage.getItem('toongenie_or_key') || "",
+    groq: localStorage.getItem('toongenie_groq_key') || "",
+    openai: localStorage.getItem('toongenie_openai_key') || "",
+    ollamaBase: localStorage.getItem('toongenie_ollama_base') || "http://localhost:11434"
   });
 
   const [assignments, setAssignments] = useState<AIAssignments>({
-    scripting: { provider: AIProvider.GEMINI, modelId: "gemini-1.5-pro" },
-    visuals: { provider: AIProvider.GEMINI, modelId: "gemini-2.0-flash-exp" },
-    audio: { provider: AIProvider.GEMINI, modelId: "gemini-2.5-flash-preview-audio" },
-    motion: { provider: AIProvider.GEMINI, modelId: "veo-3.1-fast-generate-preview" }
+    scripting: { provider: AIProvider.TOONGENIE_CORE, modelId: "gemini-1.5-pro" },
+    visuals: { provider: AIProvider.TOONGENIE_CORE, modelId: "gemini-2.0-flash-exp" },
+    audio: { provider: AIProvider.TOONGENIE_CORE, modelId: "gemini-2.5-flash-preview-audio" },
+    motion: { provider: AIProvider.TOONGENIE_CORE, modelId: "veo-3.1-fast-generate-preview" }
   });
 
   const [availableModels, setAvailableModels] = useState<Partial<Record<AIProvider, AIModel[]>>>({});
@@ -302,11 +302,11 @@ export default function App() {
   // --- Core Lifecycle ---
 
   useEffect(() => {
-    localStorage.setItem('toa_gemini_key', apiKeys.gemini);
-    localStorage.setItem('toa_or_key', apiKeys.openrouter);
-    localStorage.setItem('toa_groq_key', apiKeys.groq);
-    localStorage.setItem('toa_openai_key', apiKeys.openai);
-    localStorage.setItem('toa_ollama_base', apiKeys.ollamaBase);
+    localStorage.setItem('toongenie_core_key', apiKeys.gemini);
+    localStorage.setItem('toongenie_or_key', apiKeys.openrouter);
+    localStorage.setItem('toongenie_groq_key', apiKeys.groq);
+    localStorage.setItem('toongenie_openai_key', apiKeys.openai);
+    localStorage.setItem('toongenie_ollama_base', apiKeys.ollamaBase);
   }, [apiKeys]);
 
   return (
@@ -314,10 +314,12 @@ export default function App() {
       {/* Settings HUD */}
       <div className="flex items-center justify-between">
         <div className="flex items-center space-x-4">
-          <div className="w-14 h-14 glass-panel flex items-center justify-center text-3xl animate-float">🧞‍♂️</div>
+          <div className="w-14 h-14 glass-panel flex items-center justify-center overflow-hidden animate-float">
+            <img src="/logo.svg" alt="ToonGenie Logo" className="w-10 h-10 object-contain" onError={(e) => e.currentTarget.src = "https://api.iconify.design/material-symbols:magic-button-outline.svg?color=%236366f1"} />
+          </div>
           <div>
             <h1 className="text-4xl font-black tracking-tighter text-white">ToonGenie Studio</h1>
-            <p className="text-[10px] uppercase font-bold tracking-[0.4em] text-indigo-400">Character Consistency Engine v4.0</p>
+            <p className="text-[10px] uppercase font-bold tracking-[0.4em] text-indigo-400">Production Pipeline v4.0</p>
           </div>
         </div>
         <button onClick={() => setShowSettings(true)} className="glass-panel w-12 h-12 flex items-center justify-center hover:bg-white/10 transition-all">⚙️</button>
@@ -446,9 +448,9 @@ export default function App() {
                 <div className="space-y-6">
                   <div>
                     <label className="text-[10px] font-black uppercase text-slate-500 mb-2 flex items-center justify-between">
-                      Google Gemini API {apiKeys.gemini ? <span className="text-emerald-400">● Active</span> : <span className="text-amber-400">○ Pending</span>}
+                      ToonGenie Core API {apiKeys.gemini ? <span className="text-emerald-400">● Active</span> : <span className="text-amber-400">○ Pending</span>}
                     </label>
-                    <input type="password" value={apiKeys.gemini} onChange={e => setApiKeys({ ...apiKeys, gemini: e.target.value })} className="w-full p-4 rounded-2xl bg-white/5 border border-white/10 focus:border-indigo-500/50 outline-none transition-all" />
+                    <input type="password" placeholder="Enter ToonGenie Core Key..." value={apiKeys.gemini} onChange={e => setApiKeys({ ...apiKeys, gemini: e.target.value })} className="w-full p-4 rounded-2xl bg-white/5 border border-white/10 focus:border-indigo-500/50 outline-none transition-all" />
                   </div>
                   <div>
                     <label className="text-[10px] font-black uppercase text-slate-500 mb-2 flex items-center justify-between">

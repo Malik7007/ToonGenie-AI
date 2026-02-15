@@ -16,10 +16,10 @@ import {
 
 /**
  * Universal AI Orchestrator.
- * Delegates tasks to Gemini, OpenRouter, Groq, or Ollama.
+ * Delegates tasks to ToonGenie Core, OpenRouter, Groq, or Ollama.
  */
 
-const getGeminiAI = (apiKey: string) => new GoogleGenAI({ apiKey });
+const getToonGenieCore = (apiKey: string) => new GoogleGenAI({ apiKey });
 
 /**
  * Executuion wrapper with retry logic for robustness.
@@ -50,8 +50,8 @@ export const callTextAI = async (
 ): Promise<string> => {
     return withRetry(async () => {
         switch (config.provider) {
-            case AIProvider.GEMINI:
-                const genAI = getGeminiAI(config.apiKey || "");
+            case AIProvider.TOONGENIE_CORE:
+                const genAI = getToonGenieCore(config.apiKey || "");
                 const result = await genAI.models.generateContent({
                     model: config.modelId,
                     contents: [{ role: "user", parts: [{ text: `${systemPrompt}\n\nTask: ${userPrompt}` }] }],
@@ -151,12 +151,12 @@ export const fetchAvailableModels = async (provider: AIProvider, apiKey: string,
                     name: m.name || m.model
                 }));
 
-            case AIProvider.GEMINI:
+            case AIProvider.TOONGENIE_CORE:
                 return [
-                    { id: "gemini-2.0-flash-exp", name: "Gemini 2.0 Flash (Fastest)" },
-                    { id: "gemini-1.5-pro", name: "Gemini 1.5 Pro (Brain)" },
-                    { id: "gemini-2.5-flash-preview-audio", name: "Gemini Audio (FX)" },
-                    { id: "veo-3.1-fast-generate-preview", name: "Veo 3.1 (Motion)" }
+                    { id: "gemini-2.0-flash-exp", name: "ToonGenie Turbo (Extreme)" },
+                    { id: "gemini-1.5-pro", name: "ToonGenie Pro (Creative Brain)" },
+                    { id: "gemini-2.5-flash-preview-audio", name: "ToonGenie Audio FX" },
+                    { id: "veo-3.1-fast-generate-preview", name: "ToonGenie Motion Synthesis" }
                 ];
 
             default: return [];
@@ -247,8 +247,8 @@ export const generateStoryScript = async (
  * Generates background music.
  */
 export const generateBackgroundMusic = async (story: Story, config: AIServiceConfig): Promise<string> => {
-    if (config.provider === AIProvider.GEMINI) {
-        const genAI = getGeminiAI(config.apiKey || "");
+    if (config.provider === AIProvider.TOONGENIE_CORE) {
+        const genAI = getToonGenieCore(config.apiKey || "");
         const response = await genAI.models.generateContent({
             model: config.modelId,
             contents: [{
@@ -270,8 +270,8 @@ export const generateBackgroundMusic = async (story: Story, config: AIServiceCon
  */
 export const generateCharacterImage = async (character: Character, style: AnimationStyle, config: AIServiceConfig): Promise<string> => {
     return withRetry(async () => {
-        if (config.provider === AIProvider.GEMINI) {
-            const genAI = getGeminiAI(config.apiKey || "");
+        if (config.provider === AIProvider.TOONGENIE_CORE) {
+            const genAI = getToonGenieCore(config.apiKey || "");
             const traits = character.traits.join(", ");
             const prompt = `MASTER TURNAROUND DESIGN: ${character.name}. Style: ${style}. Traits: ${traits}. DNA: ${character.visualPrompt}. Plain neutral background, T-pose or neutral pose, consistent lighting, 8k, detailed cartoon textures.`;
 
@@ -296,8 +296,8 @@ export const generateCharacterImage = async (character: Character, style: Animat
  */
 export const generateSceneImage = async (scene: Scene, characters: Character[], style: AnimationStyle, config: AIServiceConfig): Promise<string> => {
     return withRetry(async () => {
-        if (config.provider === AIProvider.GEMINI) {
-            const genAI = getGeminiAI(config.apiKey || "");
+        if (config.provider === AIProvider.TOONGENIE_CORE) {
+            const genAI = getToonGenieCore(config.apiKey || "");
             const characterAppearances = characters.map(c => `${c.name} (${c.traits.join(", ")}) DNA: ${c.visualPrompt}`).join("; ");
             const prompt = `CINEMATOGRAPHY: ${scene.cameraAngle}. Art Style: ${style}. Scene: ${scene.description}. Action: ${scene.imagePrompt}. CAST: ${characterAppearances}. High visual consistency, cinematic lighting, 8k render.`;
 
@@ -320,8 +320,8 @@ export const generateSceneImage = async (scene: Scene, characters: Character[], 
  * Animates a keyframe (Veo Pipeline).
  */
 export const animateScene = async (imageB64: string, description: string, config: AIServiceConfig): Promise<string> => {
-    if (config.provider === AIProvider.GEMINI) {
-        const genAI = getGeminiAI(config.apiKey || "");
+    if (config.provider === AIProvider.TOONGENIE_CORE) {
+        const genAI = getToonGenieCore(config.apiKey || "");
         const base64Clean = imageB64.split(',')[1] || imageB64;
 
         let operation = await (genAI as any).models.generateVideos({
@@ -350,8 +350,8 @@ export const animateScene = async (imageB64: string, description: string, config
  * Generates character voiceover.
  */
 export const generateVoiceover = async (text: string, config: AIServiceConfig, voiceName: string = 'Kore'): Promise<string> => {
-    if (config.provider === AIProvider.GEMINI) {
-        const genAI = getGeminiAI(config.apiKey || "");
+    if (config.provider === AIProvider.TOONGENIE_CORE) {
+        const genAI = getToonGenieCore(config.apiKey || "");
         const response = await genAI.models.generateContent({
             model: config.modelId,
             contents: [{ parts: [{ text: `Perform character dialogue with emotion: ${text}` }] }],

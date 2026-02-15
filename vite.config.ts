@@ -14,8 +14,8 @@ export default defineConfig(({ mode }) => {
       react()
     ],
     define: {
-      'process.env.API_KEY': JSON.stringify(env.GEMINI_API_KEY),
-      'process.env.GEMINI_API_KEY': JSON.stringify(env.GEMINI_API_KEY)
+      'process.env.API_KEY': JSON.stringify(env.TOONGENIE_API_KEY),
+      'process.env.TOONGENIE_API_KEY': JSON.stringify(env.TOONGENIE_API_KEY)
     },
     resolve: {
       alias: {

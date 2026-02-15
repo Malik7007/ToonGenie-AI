@@ -1,0 +1,7 @@
+<svg width="1024" height="1024" viewBox="0 0 1024 1024" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1024" height="1024" rx="200" fill="#0f172a" />
+  <circle cx="512" cy="512" r="400" fill="#6366f1" fill-opacity="0.1" />
+  <g transform="translate(256, 256) scale(0.5)">
+    <path d="M750 600C750 682.843 682.843 750 600 750H424C341.157 750 274 682.843 274 600C274 517.157 341.157 450 424 450H450L400 350L450 330L520 450H600C682.843 450 750 517.157 750 600Z" fill="#6366f1" />
+  </g>
+</svg>

@@ -1,0 +1,20 @@
+<svg width="1920" height="1080" viewBox="0 0 1920 1080" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1920" height="1080" fill="#0f172a" />
+  <defs>
+    <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1e293b;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0f172a;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="gradBrand" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#6366f1;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#a855f7;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="1920" height="1080" fill="url(#grad2)" />
+  <circle cx="960" cy="540" r="600" fill="url(#gradBrand)" fill-opacity="0.05" />
+  <g transform="translate(860, 440) scale(0.2)">
+    <path d="M750 600C750 682.843 682.843 750 600 750H424C341.157 750 274 682.843 274 600C274 517.157 341.157 450 424 450H450L400 350L450 330L520 450H600C682.843 450 750 517.157 750 600Z" fill="url(#gradBrand)" />
+  </g>
+  <text x="960" y="650" text-anchor="middle" fill="white" style="font-family:Arial; font-weight:900; font-size:60px; letter-spacing:10px;">TOONGENIE STUDIO</text>
+  <text x="960" y="710" text-anchor="middle" fill="#6366f1" style="font-family:Arial; font-weight:700; font-size:20px; letter-spacing:5px;">AI-POWERED ANIMATION PIPELINE</text>
+</svg>

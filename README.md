@@ -1,15 +1,15 @@
-
 <div align="center">
-  <img width="1200" height="475" alt="ToonGenie Banner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
+  <img src="public/logo.svg" alt="ToonGenie AI Logo" width="200"/>
   
-  # 🧞‍♂️ ToonGenie AI v4.0
-  ### The Professional-Grade AI Animation Studio | Character Consistency & Motion Engine
+  # 🎬 ToonGenie AI Studio
   
-  [![Vite](https://img.shields.io/badge/Vite-6.x-646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vitejs.dev/)
-  [![React](https://img.shields.io/badge/React-19.x-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://react.dev/)
-  [![Gemini](https://img.shields.io/badge/Gemini-AI-4285F4?style=for-the-badge&logo=google-gemini&logoColor=white)](https://deepmind.google/technologies/gemini/)
-  [![Tailwind](https://img.shields.io/badge/Tailwind-v4.0-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
-  [![TypeScript](https://img.shields.io/badge/TypeScript-5.x-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+  ### *Where AI Meets Professional Animation Production*
+  
+  [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+  [![React](https://img.shields.io/badge/React-19-61dafb.svg)](https://reactjs.org/)
+  [![TypeScript](https://img.shields.io/badge/TypeScript-5-3178c6.svg)](https://www.typescriptlang.org/)
+  [![Vite](https://img.shields.io/badge/Vite-6-646cff.svg)](https://vitejs.dev/)
+  
 </div>
 
 ---
@@ -43,7 +43,7 @@ We solved the "Character Consistency" problem with our **DNA Mapping** system.
 
 ### 🍱 Multi-Model Orchestration Matrix
 Switch between the world's most powerful AI brains via a single HUD:
-- **Google Gemini 1.5 Pro & 2.0 Flash** (Logic & Vision)
+- **ToonGenie Core (Turbo & Pro)** (Logic & Vision)
 - **OpenAI GPT-4o** (Creative Writing)
 - **Groq Cloud** (Llama 3/Mixtral for ultra-fast processing)
 - **Ollama (Localhost)** (Private/Offline model synchronization)
@@ -110,7 +110,7 @@ npm install
 ### 3. Service Configuration
 Create a `.env.local` in the root directory:
 ```env
-VITE_GEMINI_API_KEY=your_google_key
+VITE_TOONGENIE_API_KEY=your_core_key
 VITE_OPENAI_API_KEY=your_openai_key
 # Localhost Ollama defaults to http://localhost:11434
 ```

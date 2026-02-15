@@ -1,6 +1,6 @@
 {
   "name": "ToonGenie AI",
-  "description": "A professional-grade AI cartoon generator that transforms simple text prompts into complete animated stories with characters, voices, and music using the latest Gemini models.",
+  "description": "A professional-grade AI cartoon generator that transforms simple text prompts into complete animated stories with characters, voices, and music using ToonGenie Core DNA.",
   "requestFramePermissions": [
     "microphone",
     "camera"
